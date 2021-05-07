@@ -12,6 +12,15 @@ def index(request):
 
 
 def createProfile(request):
+    if request.method == "POST":
+        form = profileForm(request.POST)
+        print(form)
+        if form.is_valid():
+            print('valid')
+            form.save()
+            return redirect('index')
+        else:
+            print('not valid')
     form = profileForm
     context = {'form':form}
     return render(request,'createProfile.html',context)
