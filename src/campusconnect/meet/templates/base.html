@@ -134,7 +134,7 @@
           });
         </script>
 
- 
+
 
     <script>
       // Get the modal
@@ -162,65 +162,12 @@
     </script>
 
 
-    
+
 
 
   {% block content %}
   {% endblock %}
 
-   <footer class="site-footer">
-      <div class="content_container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <div class = 'contact_us'>
-               <form method = 'POST' href = "#">
-               {% csrf_token %}
-                  <h6 > Contact us</h6>
-                  <input class="customer-email form-control" type="text" name= "buyerEmail" placeholder = 'Your Email'>
-                  <textarea class="customer-message form-control" type='text' name= 'message' placeholder= 'Your message'></textarea>
-                  <button class="btn btn-footer" type='submit' style="color:#fff;">Send</button>
-               </form>
-
-            </div>
-
-            </div>
-
-          <div class="col-xs-6 col-md-3">
-            <div class="About">
-            <h6>About</h6>
-            <p class="text-justify">Blogr helps you post your articles.</p>
-          </div>
-          </div>
-
-          <div class="col-xs-6 col-md-3">
-            <h5><br></h5> <!--br used to align about us and these link-->
-            <ul class="footer-links">
-              <li><a href="http://scanfcode.com/about/" style="color:#fff">About Us</a></li>
-              <li><a href="http://scanfcode.com/privacy-policy/" style="color:#fff">Privacy Policy</a></li>
-            </ul>
-          </div>
-        </div>
-        <hr>
-      </div>
-      <div class="content_container">
-        <div class="row">
-          <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
-         <a href="#" style="color:#fff">Blogr</a>.
-            </p>
-          </div>
-
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <ul class="social-icons">
-              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-</footer>
 
 </body>
 </html>
