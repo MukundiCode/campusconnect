@@ -10,6 +10,8 @@ from .forms import profileForm
 def index(request):
     return render(request,'index.html')
 
+def createEvent(request):
+    return render(request,'createEvent.html')
 
 def createProfile(request):
     if request.method == "POST":

@@ -5,4 +5,5 @@ from django.urls import path
 
 urlpatterns = [
     path('createProfile', views.createProfile,name='createProfile'),
+    path('createEvent', views.createEvent,name='createEvent'),
 ]
