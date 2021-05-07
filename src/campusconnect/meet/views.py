@@ -9,6 +9,7 @@ from .forms import profileForm
 from .models import *
 
 def index(request):
+    print(matcher(6).user.username)
     return render(request,'index.html')
 
 
@@ -29,5 +30,26 @@ def createProfile(request):
     context = {'form':form}
     return render(request,'createProfile.html',context)
 
-#def matcher(user):
+#the matcher method takes in a user and searches through all the other users
+#to find the best matched user for the user in question. 
+def matcher(userID):
+    #geting the user
+    user = Profile.objects.get(id = userID)
+    userInterests = user.interests.split()
+    allUsers = Profile.objects.exclude(id = userID)
+    currentLargest = 0
+    currentIndex = 0
+    #searching through the whole list
+    for profile in allUsers:
+        interestWeight = 0
+        for interest in userInterests:
+            for other in profile.interests.split():
+                if interest == other:
+                    interestWeight = interestWeight + 1
+                    if interestWeight > currentLargest:
+                        currentLargest = interestWeight
+                        currentIndex = currentIndex + 1
+    return allUsers[currentIndex]
+                    
+    
 
