@@ -26,3 +26,6 @@ def createProfile(request):
     form = profileForm
     context = {'form':form}
     return render(request,'createProfile.html',context)
+
+def profile(request):
+    return render(request,'profile.html')
