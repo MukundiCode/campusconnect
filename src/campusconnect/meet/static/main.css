@@ -231,16 +231,18 @@ html,body
 }
 
 .right-text {
-  width: 100px;
+  width: 120px;
   /*background: red;*/
-  margin-left: 20px;
-  background: none;
+  margin-right: 30px;
+  text-align: center;
+  background:rgb(25, 114, 80);
+  border-radius: 10px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
   /*line-height: 42px;*/
-  color: rgb(48, 56, 124);
+  color: rgb(206, 207, 216);
 
   border: none;
   text-decoration: none;
