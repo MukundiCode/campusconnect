@@ -60,8 +60,6 @@ def createRequest(request):
         if form.is_valid():
             print('valid')
             form.save()
-            msg = "Your meetup request has been sent. We will match you up with students with similar interests as you and notify you once they accept the invitation. "
-            return redirect('message',msg)
         else:
             print('not valid')
             context = {'form':form}
@@ -70,6 +68,7 @@ def createRequest(request):
         thisUserID = request.user
         user = Profile.objects.get(user = thisUserID)
         weightList = matcher(user.id)
+        print("Weight List", weightList)
         meetup = MeetUp.objects.latest('id')
         #sending emails
         for i in range(meetup.numberOfPeople):
@@ -90,6 +89,8 @@ def createRequest(request):
                 print("message")
             else:
                 message = "Can not send an empty email."
+        msg = "Your meetup request has been sent. We will match you up with students with similar interests as you and notify you once they accept the invitation. "
+        return redirect('message',msg)
 
     form = meetupForm
     context = {'form':form}
@@ -160,6 +161,7 @@ def matcher(userID):
                     interestWeight = interestWeight + 3
         userList.append({"profile":profile,"weight":interestWeight})
     userList.sort(reverse=True,key=myFunc)
+    print(userList)
     return userList
 
 def myFunc(e):
