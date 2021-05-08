@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{%block content %}
+	<div class="createListing-container">
+		
+		<div class="createListingCard">
+			<div class="login-form-header"><b><h2 class='create-listing-title'>{{message}}</h2></b></div>
+
+			<h5 style="color:red;">{{error}}</h5>
+			<form class = 'create-listing-form-mobile' method= 'POST' enctype = 'multipart/form-data'>
+				{% csrf_token %}
+				<button type = "submit">Back</button>
+			</form>
+			<br></br>
+		</div>
+	</div>
+
+{% endblock %}

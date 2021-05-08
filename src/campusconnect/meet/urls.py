@@ -11,4 +11,5 @@ urlpatterns = [
     path('viewRequest/<requestID>',views.viewRequest,name='viewRequest'),
     path('acceptRequest/<requestID>',views.acceptRequest,name='acceptRequest'),
     path('denyRequest/<requestID>',views.denyRequest,name='denyRequest'),
+    path('message/<msg>',views.message,name='message'),
 ]
