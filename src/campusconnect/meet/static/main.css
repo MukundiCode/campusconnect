@@ -2641,5 +2641,11 @@ transform: scale(1.01);
   margin-right: 25px;
 }
 .CampusMap{
-
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.Coordinate{
+  width: 20px;
+  height: 30px;
 }
