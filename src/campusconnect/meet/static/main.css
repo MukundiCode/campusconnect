@@ -2696,10 +2696,18 @@ transform: scale(1.05);
 
 }
 .Map{
-  background: #2f3f47;
+  vertical-align:middle;
+  margin-left: auto;
+  margin-right: auto;
+  width: 140%;
+  padding-left: 10%;
+  padding-right: 10%;
+  background: #ffffff;
   margin-right: 25px;
 }
 .CampusMap{
+  /*display: block;*/
+  
   position: relative;
   top: 0;
   left: 0;
