@@ -5,20 +5,25 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 import json
-from .forms import profileForm
+from .forms import profileForm, eventForm, meetupForm
 from .models import *
 from django.core.mail import send_mail
 
 def index(request):
-    print(matcher(6))
     return render(request,'index.html')
 
+def createEvent(request):
+    if request.method == "POST":
+        form = eventForm(request.POST)
+        if form.is_valid():
+            print('valid')
+            form.save()
+            return redirect('index')
+        else:
+            print('not valid')
+    return render(request,'createEvent.html')
 
 def createProfile(request):
-    profileObj = Profile.objects.all()
-    for p in profileObj:
-            interestsList = p.interests.split()
-            print(interestsList)
     if request.method == "POST":
         form = profileForm(request.POST)
         if form.is_valid():
@@ -34,11 +39,22 @@ def createProfile(request):
 def createRequest(request):
     #this user
     if request.METHOD == "POST":
+        form = meetupForm(request.POST)
+        if form.is_valid():
+            print('valid')
+            form.save()
+            return redirect('index')
+        else:
+            print('not valid')
+
         thisUserID = request.user
         user = Profile.objects.get(user = thisUserID)
         weightList = matcher(user.id)
         #sending emails
         for i in range(3):
+            #creating the request for each user 
+            request_obj = Requests(user=weightList[i]["profile"].user, meetup=form)
+            request_obj.save()
             email_from = "tmchitamba@gmail.com"
             email_to = weightList[i]["profile"].user.email
             message = "Hey, someone wants to meet you"
@@ -53,7 +69,10 @@ def createRequest(request):
                 print("message")
             else:
                 message = "Can not send an empty email."
-    return render(request,'createEvent.html')
+
+    form = profileForm
+    context = {'form':form}
+    return render(request,'createEvent.html',context)
 
     
 
