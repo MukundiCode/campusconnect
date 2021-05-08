@@ -52,6 +52,21 @@ html,body
 
 }
 
+.create-profile-content {
+  margin: auto;
+  margin-top: 60px;
+  width: 100%;
+
+  border: 1px solid blue;
+}
+
+.create-profile-content-inner {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 50%;
+}
+
 .topNav-mobile {
     position: fixed;
     display: flex;
