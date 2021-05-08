@@ -13,6 +13,9 @@ class Profile(models.Model):
     description = models.TextField(null=True,max_length=200,help_text='Take this opportunity to describe yourself! Feel free to say anything or everything about what defines you as a person.',)
     yearOfStudy = models.IntegerField(null=True, help_text="What is your current year of study? This helps us match you with people within your age bracket.")
 
+    def __str__(self):
+        return self.user.username
+
 class MeetUp(models.Model):
     title = models.CharField(null=True,max_length=100,help_text="Give your meetup request a title, eg , 'Looking for a group of friends to go hiking with'.Try to keep it short.")
     location = models.CharField(null=True, max_length=100,help_text="Where would you want to meet ?If anywhere on campus, just say On Campus.")

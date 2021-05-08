@@ -21,7 +21,7 @@ def index(request):
 @login_required(login_url='login')
 def createEvent(request):
     if request.method == "POST":
-        form = eventForm(request.POST)
+        form = eventForm(request.POST,request.FILES)
         if form.is_valid():
             print('valid')
             form.save()
@@ -35,7 +35,7 @@ def createEvent(request):
 @login_required(login_url='login')
 def createProfile(request):
     if request.method == "POST":
-        form = profileForm(request.POST)
+        form = profileForm(request.POST,request.FILES)
         if form.is_valid():
             print('valid')
             form.save()
