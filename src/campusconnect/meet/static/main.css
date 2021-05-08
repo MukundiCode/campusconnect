@@ -17,21 +17,24 @@ html,body
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
+    background: #4b4b4a;
 }
 
 .topNav {
+  margin-top: 10px;
   position: fixed;
   display: flex;
   width: 100vw;
   height: 60px;
   top: 0px;
   left: 0px;
-  background: #e3f0aa;
+  border-radius: 20px;
+  background: #41af97;
   color: #fff;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /*box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/
   z-index: 5;
   /*border: 1px solid red;*/
   will-change: transform;
@@ -91,7 +94,7 @@ html,body
   justify-content: center;
   align-items: center;
   background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(107, 105, 105, 0.25);
+  /*box-shadow: 0px 4px 4px rgba(107, 105, 105, 0.25);*/
   z-index: 4;
   border-radius: 10px;
 }
@@ -181,7 +184,7 @@ html,body
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
-  color: rgb(172, 115, 62);
+  color: rgb(41, 30, 107);
 
   border: outset;
   text-decoration: none;
