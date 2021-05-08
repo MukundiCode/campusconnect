@@ -26,7 +26,7 @@ html,body
   height: 60px;
   top: 0px;
   left: 0px;
-  background: #3ed139;
+  background: #e3f0aa;
   color: #fff;
   flex-direction: row;
   align-items: center;
@@ -36,6 +36,7 @@ html,body
   /*border: 1px solid red;*/
   will-change: transform;
 }
+
 
 .profile-content {
   margin-top: 60px;
@@ -163,41 +164,15 @@ html,body
 }
 
 .left-col {
-    flex: 0.5;
+    flex: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
 }
 
-.logo {
-    width: 85px;
-    height: 40px;
-    /*background: red;*/
-    margin-left: 20px;
-    background: none;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 26px;
-    line-height: 42px;
-    color: rgb(37, 98, 155);
-
-    border: none;
-    text-decoration: none;
-}
-
-.logo:hover {
-  color:black;
-  cursor: pointer;
-}
-
-.logo:hover{
-  transform: scale(1.2);
-}
 
 .right-text {
-  width: 150px;
   height: 40px;
   /*background: red;*/
   margin-left: 10px;
@@ -206,20 +181,16 @@ html,body
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
-  line-height: 42px;
-  color: #fff;
+  color: rgb(172, 115, 62);
 
-  border: none;
+  border: outset;
   text-decoration: none;
 }
 
 .right-text:hover {
-color:black;
+color:rgb(155, 67, 8);
 cursor: pointer;
-}
-
-.right-text:hover{
-transform: scale(1.2);
+transform: scale(1.01);
 }
 
 .NavBar2Items{
