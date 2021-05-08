@@ -118,6 +118,7 @@ def matcher(userID):
     #geting the user
     user = Profile.objects.get(id = userID)
     userInterests = user.interests.split()
+    userValues = user.values.split()
     allUsers = Profile.objects.exclude(id = userID)
     userList = []
     #searching through the whole list
@@ -127,6 +128,10 @@ def matcher(userID):
             for other in profile.interests.split():
                 if interest == other:
                     interestWeight = interestWeight + 1
+        for values in userValues:
+            for other in profile.values.split():
+                if values == other:
+                    interestWeight = interestWeight + 3
         userList.append({"profile":profile,"weight":interestWeight})
     userList.sort(reverse=True,key=myFunc)
     return userList
