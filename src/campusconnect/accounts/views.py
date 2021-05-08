@@ -17,7 +17,7 @@ def register(request):
             password = form.cleaned_data['password1']
             #user = authenticate(email=email,password = password)
             django_login(request, user)
-            return redirect('index')
+            return redirect('createProfile')
         else:
             print(form.errors)
             form_error = True

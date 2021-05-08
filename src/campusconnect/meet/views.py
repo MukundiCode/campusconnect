@@ -39,7 +39,7 @@ def createProfile(request):
         if form.is_valid():
             print('valid')
             form.save()
-            return redirect('createProfile')
+            return redirect('profile')
         else:
             print('not valid')
     form = profileForm
