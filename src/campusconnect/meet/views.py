@@ -16,6 +16,9 @@ def index(request):
 def createEvent(request):
     return render(request,'createEvent.html')
 
+def profile(request):
+    return render(request,'profile.html')
+
 def createProfile(request):
     profileObj = Profile.objects.all()
     for p in profileObj:
