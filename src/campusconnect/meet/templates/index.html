@@ -5,10 +5,13 @@
 
 {% block content %}
 <div class="MapContainer">
-    <div class="Map">
-        <div class="CampusMap">
-            <img class="Camp" src="{%static "images/Camp.jpg"%}"" alt="CampusMap" style="width:50%;height:50%;">
-        </div>
+<div class="Map">
+<div class="CampusMap">
+    <img class="Camp" src="{%static 'images/Camp.jpg'%}" alt="CampusMap" style="width:50%;height:50%;position: relative;">
+    <a href="https://youtu.be/bD5nnX1vS00"><img class="Coordinate" src="{%static 'images/Pin.png'%}" style="top: 150;
+    left: 500;position: absolute;" alt="Pin"></a><!-- 300 is the height limit, 700 is the width limit.-->
+    <a href="https://youtu.be/bD5nnX1vS00"><img class="Coordinate" src="{%static 'images/Pin.png'%}" style="top: 100;
+    left: 500;position: absolute;" alt="Pin"></a>
     </div>
 </div>
 {% endblock %}
