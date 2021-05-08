@@ -9,7 +9,15 @@
 /coverage
 
 # production
-/build
+/src/campusconnect/campusconnect
+*pyc
+
+# production2
+/src/campusconnect/meet
+*pyc
+
+# production3
+/src/campusconnect/account
 *pyc
 
 # misc
