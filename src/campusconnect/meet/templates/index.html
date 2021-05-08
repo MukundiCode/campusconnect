@@ -4,7 +4,8 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-        <div class="MapContainer" >
+        <div class="MapContainer" role="alert" >
+            <div class="login-form-header" style="padding-top: 30px; margin-bottom: 15px;"><b><h2 class='create-listing-title'>Click on the Tags to Find Exciting Events Happening Around UCT!</h2></b></div>
             <div class="Map" >
                 <div class="CampusMap">
                     <img class="Camp" src="{%static 'images/Camp.jpg'%}" alt="CampusMap" style="width:65%;height:65%;position: relative;">
@@ -74,5 +75,11 @@
             </form>
         {%endfor%}
     </div>
+
+    <script>
+        function myFunction() {
+        alert("This is an Alert!");
+        }
+        </script>
 
 {% endblock %}

@@ -2264,7 +2264,7 @@ transform: scale(1.05);
   border-left: 3px solid #b4b4b4;
 
   padding: 50px 5px 40px 5px;
-  border: 1px solid green;
+  /*border: 1px solid green;*/
 }
 
 .create-listing-form{
