@@ -112,12 +112,29 @@ def acceptRequest(request,requestID):
     req = Requests.objects.get(id = requestID)
     meet_user_obj = Meet_User(user=request.user,meetup=req.meetup)
     meet_user_obj.save()
-    return redirect('index')
+    #emailing the owner of the listing
+    email_from = "tmchitamba@gmail.com"
+    email_to = request.user.email
+    message = "Hey, "+ req.requestee +",  "+request.user.username +" , has accepted your request to meetup. You can contact them on this email:"+request.user.email +". Remember to adhere to covid protocols in your interactions."
+    if message != '':
+        send_mail(
+        'Meetup accepted via campusConnect',
+        message,
+        email_from,
+        [email_to],
+            )
+        message = "Your email has been sent, and the seller will respond to you."
+        print("Email sent")
+    else:
+        message = "Can not send an empty email."
+    msg = "You've accepted the meetup request. We will notify "+req.requestee.user.username +". The will contact you via email. Remeber to observe covid protocols in your interactions. Happy mingling!"
+    return redirect('message',msg)
 
 def denyRequest(request,requestID):
     req = Requests.objects.get(id = requestID)
     req.delete()
-    return redirect('index')
+    msg = "Request cancelled"
+    return redirect('message',msg)
 
     
 
