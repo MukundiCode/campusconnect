@@ -8,7 +8,7 @@
 <div class="create-profile-content">
     <h2 class='create-listing-title' style='margin-top:20px; margin-bottom: 10px; font-size:35px;' align=center  >Create an Event</h2>
     <div class="create-profile-content-inner">
-      <form method="post" novalidate>
+      <form method="post" novalidate enctype='multipart/form-data'>
         {% csrf_token %}
 
         {{ form|crispy }}

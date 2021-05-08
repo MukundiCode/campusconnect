@@ -48,7 +48,9 @@ def createProfile(request):
 
 @login_required(login_url='login')
 def profile(request):
-    return render(request,'profile.html')
+    user = Profile.objects.get(user = request.user)
+    context = {'profile':user}
+    return render(request,'profile.html',context)
 
 @login_required(login_url='login')
 def createRequest(request):

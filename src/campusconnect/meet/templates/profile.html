@@ -8,10 +8,10 @@
   <div class="selected-content" style="">
        <div class="profile-div" style="width:100%;  display:flex; flex-direction:column; justify-content:center; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5); background-color: white; border: 1px, rgb(177, 177, 177); border-color: rgb(209, 209, 209);">
          <div class="profile-pic-div" style="width:250px; height:250px; border-radius:50%; margin-top:40px; margin-bottom:30px; margin-left:120px; border:2px solid grey;">
-           <img style="border-radius:50%;" class = 'listingPic' >
+           <img style="border-radius:50%;" src="{{profile.profileImage.url}}" class = 'listingPic' >
          </div>
          <div class="" style="display:flex; margin-left:120px; align-items:center;">
-           <h4 class = "listingName">Takura Kawome</h4>
+           <h4 class = "listingName">{{profile.user.username}}</h4>
          </div>
          <hr style="width:90%; margin:auto; margin-bottom:20px; border:1px solid grey;">
          <div style="display:flex; flex-direction:row; justify-content:flex-end; flex:0.5; margin-right:80px; margin-bottom:40px;">
