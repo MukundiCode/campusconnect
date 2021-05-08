@@ -33,26 +33,27 @@ def createProfile(request):
 
 def createRequest(request):
     #this user
-    thisUserID = request.user
-    user = Profile.objects.get(user = thisUserID)
-    weightList = matcher(user.id)
-
-    #sending emails
-    for i in range(3):
-        email_from = "tmchitamba@gmail.com"
-        email_to = weightList[i]["profile"].user.email
-        message = "Hey, someone wants to meet you"
-        if message != '':
-            send_mail(
-            'Meeting request '+ email_from +' via campusConnect',
-            message,
-            email_from,
-            [email_to],
-                )
-            message = "Your email has been sent, and the seller will respond to you."
-            print("message")
-        else:
-            message = "Can not send an empty email."
+    if request.METHOD == "POST":
+        thisUserID = request.user
+        user = Profile.objects.get(user = thisUserID)
+        weightList = matcher(user.id)
+        #sending emails
+        for i in range(3):
+            email_from = "tmchitamba@gmail.com"
+            email_to = weightList[i]["profile"].user.email
+            message = "Hey, someone wants to meet you"
+            if message != '':
+                send_mail(
+                'Meeting request '+ email_from +' via campusConnect',
+                message,
+                email_from,
+                [email_to],
+                    )
+                message = "Your email has been sent, and the seller will respond to you."
+                print("message")
+            else:
+                message = "Can not send an empty email."
+    return render(request,'createEvent.html')
 
     
 
