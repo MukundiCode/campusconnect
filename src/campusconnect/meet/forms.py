@@ -11,7 +11,7 @@ from meet.models import Profile,Event,MeetUp
 class profileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['profileImage','studentNumber','user','description','interests']
+        fields = ['profileImage','studentNumber','user','description','interests','values','yearOfStudy']
         
 class eventForm(forms.ModelForm):
     class Meta:
@@ -21,4 +21,4 @@ class eventForm(forms.ModelForm):
 class meetupForm(forms.ModelForm):
     class Meta:
         model = MeetUp
-        fields = ['title','location','time','description']
+        fields = ['title','location','time','description','numberOfPeople']

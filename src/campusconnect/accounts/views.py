@@ -17,7 +17,7 @@ def register(request):
             password = form.cleaned_data['password1']
             #user = authenticate(email=email,password = password)
             django_login(request, user)
-            return redirect('index')
+            return redirect('createProfile')
         else:
             print(form.errors)
             form_error = True
@@ -38,16 +38,13 @@ def login(request):
         password = request.POST.get('Password')
         print(request.POST.get('Email'))
         user = authenticate(request,email=email,password = password)
-        django_login(request, user)
-        return redirect('index')
-        """if user != None:
+        if user != None:
             django_login(request, user)
             return redirect('index')
         else:
             error_message = "Email or Password incorrect, please try again"
-            print(error_message)
             context = {'error':error_message}
-            return render(request,'registration/login.html',context)"""
+            return render(request,'registration/login.html',context)
     return render(request,'registration/login.html',context)
 
 def logoutUser(request):
