@@ -8,21 +8,23 @@
 <body>
 
 <div class="createListing-container">
-<h2 class='create-listing-title' style='margin-top:10%;' align=center  >Creat your account</h2>
- <div class="createListingCard">
-
-			<h5 style="color:red;">{{form.errors}}</h5>
-			<form class = 'create-listing-form-mobile' method= 'POST' enctype = 'multipart/form-data'>
+	<div class="createListingCard">
+		<div class="login-form-header"><h2 class='create-listing-title'>Create your account</h2></div>
+		<h5 style="color:red;">{{form.errors}}</h5>
+		<form class = 'create-listing-form-mobile' method= 'POST' enctype = 'multipart/form-data'>
 			{% csrf_token %}
-        <input type='text' name='username' class ='customer-email form-control' placeholder='Username'>
-				<input type='email' name='email' class ='customer-email form-control' placeholder='Email'>
-				<input type='password' name='password1' class ='customer-email form-control' placeholder='Password'>
-        	<input type='password' name='password2' class ='customer-email form-control' placeholder='Repeat Password'>
-				<button class='btn btn-outline-primary' type='submit'>Sign up</button>
-			</form>
-      <br></br>
+			<input type='text' name='username' class ='customer-email form-control' placeholder='Username'>
+			<input type='email' name='email' class ='customer-email form-control' placeholder='Email'>
+			<input type='password' name='password1' class ='customer-email form-control' placeholder='Password'>
+			<input type='password' name='password2' class ='customer-email form-control' placeholder='Repeat Password'>
+			<button class='btn btn-outline-primary' type='submit'>Sign up</button>
+			<h2 class='create-listing-title' style='font-size:16px; margin-top: 10px;'>Already a member?</h2>
+			<a href="{% url 'login' %}">Sign In</a>
+		</form>
+		
+		<br></br>
+		</div>
 	</div>
- </div>
 </div>
 
  <div class='mobile-login-replace'>
