@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'meet',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -72,6 +73,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'campusconnect.wsgi.application'
 AUTH_USER_MODEL = 'accounts.account'
+
+LOGIN_URL = 'login'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -124,3 +127,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIR = [os.path.join(BASE_DIR, 'meet/static')]
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
