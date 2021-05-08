@@ -26,7 +26,7 @@ html,body
   height: 60px;
   top: 0px;
   left: 0px;
-  background: #3ed139;
+  background: #2cc987;
   color: #fff;
   flex-direction: row;
   align-items: center;
@@ -35,6 +35,14 @@ html,body
   z-index: 5;
   /*border: 1px solid red;*/
   will-change: transform;
+}
+
+.index-container {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
 }
 
 
@@ -65,6 +73,21 @@ html,body
   margin-top: 20px;
   margin-bottom: 20px;
   width: 50%;
+}
+
+.MapContainer{
+  margin-top: 60px;
+  width: 95%;
+  margin: auto;
+  border: 1px solid red;
+
+}
+.Map{
+  background: #2f3f47;
+  /*margin-right: 25px;*/
+}
+.CampusMap{
+
 }
 
 .topNav-mobile {
@@ -208,29 +231,28 @@ html,body
 }
 
 .right-text {
-  width: 150px;
-  height: 40px;
+  width: 100px;
   /*background: red;*/
-  margin-left: 10px;
+  margin-left: 20px;
   background: none;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
-  line-height: 42px;
-  color: #fff;
+  /*line-height: 42px;*/
+  color: rgb(48, 56, 124);
 
   border: none;
   text-decoration: none;
 }
 
 .right-text:hover {
-color:black;
+color:rgb(15, 28, 104);
 cursor: pointer;
 }
 
 .right-text:hover{
-transform: scale(1.2);
+transform: scale(1.05);
 }
 
 .NavBar2Items{
@@ -2359,11 +2381,11 @@ transform: scale(1.2);
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 6; /* Sit on top */
-  left: 0;
-  top: 0;
+  /*z-index: 6; /* Sit on top */
+  /*left: 0;
+  top: 0;*/
   width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  height: 100%; /*Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
@@ -2666,4 +2688,31 @@ transform: scale(1.2);
   margin: 0 5px;
   height: 40px;
   width: 40px;
+}
+
+.MapContainer{
+  margin-top: 5%;
+  margin-left: 2%;
+
+}
+.Map{
+  vertical-align:middle;
+  margin-left: auto;
+  margin-right: auto;
+  width: 140%;
+  padding-left: 10%;
+  padding-right: 10%;
+  background: #ffffff;
+  margin-right: 25px;
+}
+.CampusMap{
+  /*display: block;*/
+  
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.Coordinate{
+  width: 20px;
+  height: 30px;
 }

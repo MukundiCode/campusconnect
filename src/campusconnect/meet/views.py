@@ -28,7 +28,9 @@ def createEvent(request):
             return redirect('index')
         else:
             print('not valid')
-    return render(request,'createEvent.html')
+    form = eventForm
+    context = {'form':form}
+    return render(request,'createEvent.html', context)
 
 @login_required(login_url='login')
 def createProfile(request):

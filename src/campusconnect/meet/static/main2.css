@@ -2646,8 +2646,9 @@ transform: scale(1.01);
 }
 
 .MapContainer{
-  margin-top: 5%;
+  margin-top: 60px;
   margin-left: 2%;
+  border: 1px solid red;
 
 }
 .Map{
