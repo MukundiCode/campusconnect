@@ -74,6 +74,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'campusconnect.wsgi.application'
 AUTH_USER_MODEL = 'accounts.account'
 
+LOGIN_URL = 'login'
+
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 

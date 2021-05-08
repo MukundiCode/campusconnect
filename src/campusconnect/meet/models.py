@@ -14,7 +14,7 @@ class Profile(models.Model):
     yearOfStudy = models.IntegerField(null=True)
 
 class MeetUp(models.Model):
-    location = models.TextField(null=True)
+    location = models.CharField(null=True, max_length=100)
     time = models.TimeField(null=True)
     description = models.TextField(null= True)
 
@@ -30,3 +30,4 @@ class Event(models.Model):
 class Requests(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,null = True,on_delete = models.CASCADE)
     meetup = models.ForeignKey(MeetUp,null = True,on_delete = models.CASCADE)
+    #requester = models.OneToOneField(settings.AUTH_USER_MODEL,null=True, on_delete=models.CASCADE)

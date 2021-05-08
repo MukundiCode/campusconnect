@@ -12,6 +12,7 @@ from django.core.mail import send_mail
 def index(request):
     return render(request,'index.html')
 
+@login_required(login_url='login')
 def createEvent(request):
     if request.method == "POST":
         form = eventForm(request.POST)
@@ -23,6 +24,7 @@ def createEvent(request):
             print('not valid')
     return render(request,'createEvent.html')
 
+@login_required(login_url='login')
 def createProfile(request):
     if request.method == "POST":
         form = profileForm(request.POST)
@@ -36,12 +38,14 @@ def createProfile(request):
     context = {'form':form}
     return render(request,'createProfile.html',context)
 
+@login_required(login_url='login')
 def profile(request):
     return render(request,'profile.html')
-    
+
+@login_required(login_url='login')
 def createRequest(request):
     #this user
-    if request.METHOD == "POST":
+    if request.method == "POST":
         form = meetupForm(request.POST)
         if form.is_valid():
             print('valid')
@@ -53,10 +57,11 @@ def createRequest(request):
         thisUserID = request.user
         user = Profile.objects.get(user = thisUserID)
         weightList = matcher(user.id)
+        meetup = MeetUp.objects.latest('id')
         #sending emails
         for i in range(3):
             #creating the request for each user 
-            request_obj = Requests(user=weightList[i]["profile"].user, meetup=form)
+            request_obj = Requests(user=weightList[i]["profile"].user, meetup=meetup)
             request_obj.save()
             email_from = "tmchitamba@gmail.com"
             email_to = weightList[i]["profile"].user.email
@@ -73,9 +78,9 @@ def createRequest(request):
             else:
                 message = "Can not send an empty email."
 
-    form = profileForm
+    form = meetupForm
     context = {'form':form}
-    return render(request,'createEvent.html',context)
+    return render(request,'createRequest.html',context)
 
     
 
