@@ -11,12 +11,12 @@
  <div align='center' style='width:80%;margin:auto;'>
 <p >{{req.meetup.description}}</p>
 
-<h6 style='color: rgb(138, 133, 133);'>From {{req.requestee.username}} </h6>
+<a href={%url 'getProfile' userID=req.requestee.id %} style='color: rgb(138, 133, 133);'>From {{req.requestee.username}} </a>
 <a href= {% url 'acceptRequest' requestID=req.id %}> Accept Request </a>
 <a href= {% url 'denyRequest' requestID=req.id %} style="color:red;"> Reject Request  </a>
 </div>
 <br></br>
- <h2 align='center' style='color: rgb(37, 98, 155);'>MeetUp Requests</h2>
+ <h2 align='center' style='color: rgb(37, 98, 155);'>Other MeetUp Requests</h2>
  <div class="gridListings">
 
     {% for r in requests %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Events{% endblock %}
+
+{% block content %}
+
+
+  <!-- Page content -->
+   <div class ="maincontainer">
+   {%if searchResults%}
+     <div class = "catName"> {{name}}</div>
+     <hr class = "line"> 
+     <div class="gridListings">
+      {% for event in events %}
+      <div class='card-full'>
+        <form method="GET" >
+          <!--<form>-->
+          {% csrf_token %}
+    
+          <button class="card-listing" type="submit">
+          <div class='image-container-listing'>
+            <img src="{{item.listingImage.url}}" class="card-img-top-listing" alt="...">
+          </div>
+              <div class="card-body-listing">
+                <h4 class="card-title">{{item.listingName}}</h4>
+                <h6 class="card-description" style='line-height:1' >{{item.description}}</h6>
+
+                <h5 class="card-description"style='color:#177ea7' >ZAR{{item.price}}</h5>
+              </div>
+
+          </button>
+        </form>
+        <div class='card-bookmark'>
+                  <form method="POST" action="{%url 'addBookmark' listingID=item.id %}">
+                      {% csrf_token %}
+                      <input type = "hidden" name ="category" value="{{item.listingName}}">
+                      <button type='submit' class='bookmark-btn' method = 'GET' > Bookmark </button>
+                  </form>
+              </div>
+
+        </div>
+
+        {% endfor %}
+  </div>
+  {%else%}
+  <div class=catName>
+    <h4>No results found</h4>
+  </div>
+  {%endif%}
+  </div>
+<div class='listings-body'>
+  <div class="maincontainer-mobile">
+      <div class = "catName-mobile">Search Results</div>
+      <hr class = "line-mobile">
+
+      <div class='mobile-card-view'>
+        {% for item in searchResults %}
+          <form method="GET" action ="{%url 'selectedListing' listingID=item.id%}">
+            {% csrf_token %}
+              
+            <button class="mobile-listing-card" type="submit">
+              <div class="card-div" style="width:100%;  display:flex; flex-direction:row;">
+                <div class="image-container-listing-mobile">
+                  <img class = 'card-img-top-listing' src="{{item.listingImage.url}}" style="max-height:100%;">
+                </div>
+                <div class="content-div">
+                  <h4 class = "card-description-mobile"> {{item.listingName}}</h4>
+                  <p class = 'card-description-mobile'><b>Description:</b> {{item.description}}</p>
+                  <p class = 'card-description-mobile' style="font-size:14px"><b>Price:</b> {{item.price}}</p>
+                </div>
+              </div>
+            </button>
+          </form>
+        {% endfor %}
+      </div>
+    </div>
+</div>
+{% endblock %}

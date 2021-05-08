@@ -53,6 +53,12 @@ def profile(request):
     return render(request,'profile.html',context)
 
 @login_required(login_url='login')
+def getProfile(request,userID):
+    user = Profile.objects.get(user = request.user)
+    context = {'profile':user}
+    return render(request,'profile.html',context)
+
+@login_required(login_url='login')
 def createRequest(request):
     #this user
     if request.method == "POST":
