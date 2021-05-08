@@ -128,3 +128,12 @@ STATICFILES_DIR = [os.path.join(BASE_DIR, 'meet/static')]
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#SMTP CONFIG
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'taskradar79@gmail.com'
+EMAIL_HOST_PASSWORD = 'Anderson12*'
+DEFAULT_FROM_EMAIL = 'noreply<no_reply@domain.com>'

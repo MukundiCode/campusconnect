@@ -21,4 +21,4 @@ class eventForm(forms.ModelForm):
 class meetupForm(forms.ModelForm):
     class Meta:
         model = MeetUp
-        fields = ['location','time','description']
+        fields = ['title','location','time','description']

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block content%}
+<!DOCTYPE html>
+<html>
+<body>
+
+ <div class="listings-body">
+ <h1 align='center'> {{req.meetup.title}}</h1>
+ <div align='center' style='width:80%;margin:auto;'>
+<p >{{req.meetup.description}}</p>
+
+<h6 style='color: rgb(138, 133, 133);'>From {{req.requestee.username}} </h>
+<a action= {% url 'acceptRequest' requestID=req.id %}> Accept </a>
+</div>
+<br></br>
+ <h2 align='center' style='color: rgb(37, 98, 155);'>MeetUp Requests</h2>
+ <div class="gridListings">
+
+    {% for r in requests %}
+        <form method="GET" action ="{%url 'viewRequest' requestID=r.id%}">
+            {% csrf_token %}
+            <button class="card-listing" type="submit">
+                <div class="content-div" style="left:90px; width:100%; padding: 5px 5px 5px 5px; text-align:left;">
+                  <h4 class = ""> {{r.title}} </h4>
+                  <h6 style='color: rgb(138, 133, 133);'>From {{r.requestee.username}} </h6>
+                  <p class = '' style="font-size:14px;margin: 0;"><b></b> {{r.meetup.description}}</p>
+                  <p style='margin: 0;' >...</p>
+                </div>
+              
+            </button>
+          </form>
+    {%endfor%}
+</div>
+</div>
+<div style='margin-top:0px;' class="createListing-container-mobile" >
+
+    <!--<h2  style='color: rgb(37, 98, 155);'>Latest Blogs</h2>-->
+
+    {% for r in requests %}
+        <form method="GET" action ="{%url 'viewRequest' requestID=r.id%}" >
+            {% csrf_token %}
+            <button class="mobile-listing-card" type="submit">
+                <div class="content-div" style="left:90px; width:100%; padding: 5px 5px 5px 5px; text-align:left;">
+                  <h4 class = ""> {{r.title}} </h4>
+                  <h6 style='color: rgb(138, 133, 133);'>From {{r.requestee.username}} </h6>
+                  <p class = '' style="font-size:14px;margin: 0;"><b></b> {{r.meetup.description}}</p>
+                  <p style='margin: 0;' >...</p>
+                </div>
+              
+            </button>
+          </form>
+    {%endfor%}
+</div>
+</div>
+{% endblock %}
