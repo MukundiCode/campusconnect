@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect
 import json
 from .forms import profileForm
 from .models import *
+from django.core.mail import send_mail
 
 def index(request):
     print(matcher(6))
@@ -30,6 +31,30 @@ def createProfile(request):
     context = {'form':form}
     return render(request,'createProfile.html',context)
 
+def createRequest(request):
+    #this user
+    thisUserID = request.user
+    user = Profile.objects.get(user = thisUserID)
+    weightList = matcher(user.id)
+
+    #sending emails
+    for i in range(3):
+        email_from = "tmchitamba@gmail.com"
+        email_to = weightList[i]["profile"].user.email
+        message = "Hey, someone wants to meet you"
+        if message != '':
+            send_mail(
+            'Meeting request '+ email_from +' via campusConnect',
+            message,
+            email_from,
+            [email_to],
+                )
+            message = "Your email has been sent, and the seller will respond to you."
+            print("message")
+        else:
+            message = "Can not send an empty email."
+
+    
 
 #the matcher method takes in a user and searches through all the other users
 #to find the best matched user for the user in question. 
