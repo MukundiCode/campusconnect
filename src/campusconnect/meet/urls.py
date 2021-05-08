@@ -10,4 +10,5 @@ urlpatterns = [
     path('createRequest', views.createRequest,name='createRequest'),
     path('viewRequest/<requestID>',views.viewRequest,name='viewRequest'),
     path('acceptRequest/<requestID>',views.acceptRequest,name='acceptRequest'),
+    path('denyRequest/<requestID>',views.denyRequest,name='denyRequest'),
 ]

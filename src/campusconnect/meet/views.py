@@ -105,6 +105,11 @@ def acceptRequest(request,requestID):
     meet_user_obj.save()
     return redirect('index')
 
+def denyRequest(request,requestID):
+    req = Requests.objects.get(id = requestID)
+    req.delete()
+    return redirect('index')
+
     
 
 #the matcher method takes in a user and searches through all the other users
