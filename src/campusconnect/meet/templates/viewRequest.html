@@ -1,18 +1,19 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Home{% endblock %}
+{%block content%}
+<!DOCTYPE html>
+<html>
+<body>
 
-{% block content %}
-<div class="MapContainer">
-<div class="Map">
-<div class="CampusMap">
-    <img class="Camp" src="{%static "images/Camp.jpg"%}" alt="CampusMap" style="width:50%;height:50%;">
-
-    </div>
-
-</div>
  <div class="listings-body">
+ <h1 align='center'> {{req.meetup.title}}</h1>
+ <div align='center' style='width:80%;margin:auto;'>
+<p >{{req.meetup.description}}</p>
+
+<h6 style='color: rgb(138, 133, 133);'>From {{req.requestee.username}} </h>
+</div>
+<br></br>
  <h2 align='center' style='color: rgb(37, 98, 155);'>MeetUp Requests</h2>
  <div class="gridListings">
 
@@ -21,7 +22,7 @@
             {% csrf_token %}
             <button class="card-listing" type="submit">
                 <div class="content-div" style="left:90px; width:100%; padding: 5px 5px 5px 5px; text-align:left;">
-                  <h4 class = ""> {{r.meetup.title}} </h4>
+                  <h4 class = ""> {{r.title}} </h4>
                   <h6 style='color: rgb(138, 133, 133);'>From {{r.requestee.username}} </h6>
                   <p class = '' style="font-size:14px;margin: 0;"><b></b> {{r.meetup.description}}</p>
                   <p style='margin: 0;' >...</p>

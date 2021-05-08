@@ -10,6 +10,12 @@ from .models import *
 from django.core.mail import send_mail
 
 def index(request):
+    #out index page will display requests if the user is aunthenticated
+    if request.user.is_authenticated:
+        requests = Requests.objects.filter(user = request.user)
+        print(requests)
+        context = {'requests':requests}
+        return render(request,'index.html',context)
     return render(request,'index.html')
 
 @login_required(login_url='login')
@@ -63,7 +69,7 @@ def createRequest(request):
         #sending emails
         for i in range(3):
             #creating the request for each user 
-            request_obj = Requests(user=weightList[i]["profile"].user, meetup=meetup)
+            request_obj = Requests(user=weightList[i]["profile"].user, meetup=meetup,requestee=request.user)
             request_obj.save()
             email_from = "tmchitamba@gmail.com"
             email_to = weightList[i]["profile"].user.email
@@ -84,6 +90,12 @@ def createRequest(request):
     context = {'form':form}
     return render(request,'createRequest.html',context)
 
+@login_required(login_url='login')
+def viewRequest(request,requestID):
+    requests = Requests.objects.filter(user = request.user)
+    req = Requests.objects.get(id = requestID)
+    context = {'req':req,'requests':requests}
+    return render(request,"viewRequest.html",context)
     
 
 #the matcher method takes in a user and searches through all the other users
