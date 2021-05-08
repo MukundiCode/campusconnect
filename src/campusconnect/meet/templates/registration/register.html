@@ -3,6 +3,7 @@
 
 {% block title %}Register{% endblock %}
 <!DOCTYPE html>
+<<<<<<< HEAD
 
 {% block content %}
   <html>
@@ -31,3 +32,52 @@
   </html>
 
 {% endblock %}
+=======
+{%block content%}
+<html>
+<body>
+
+<div class="createListing-container">
+<h2 class='create-listing-title' style='margin-top:10%;' align=center  >Creat your account</h2>
+ <div class="createListingCard">
+
+			<h5 style="color:red;">{{form.errors}}</h5>
+			<form class = 'create-listing-form-mobile' method= 'POST' enctype = 'multipart/form-data'>
+			{% csrf_token %}
+        <input type='text' name='username' class ='customer-email form-control' placeholder='Username'>
+				<input type='email' name='email' class ='customer-email form-control' placeholder='Email'>
+				<input type='password' name='password1' class ='customer-email form-control' placeholder='Password'>
+        	<input type='password' name='password2' class ='customer-email form-control' placeholder='Repeat Password'>
+				<button class='btn btn-outline-primary' type='submit'>Sign up</button>
+			</form>
+      <br></br>
+	</div>
+ </div>
+</div>
+
+ <div class='mobile-login-replace'>
+
+<div class="createListing-container-mobile" style='margin-top: 20px;' >
+	<div class = 'createListingCard-mobile'>
+			<div class='create-listing-img'>
+				<img class= "reg-img" src="{%static "images/register.jpg"%}" >
+				<h2 class='create-listing-title' align=center >Creat your account</h2>
+		    </div>
+			<div class='space'>  </div>
+			<h5 style="color:red;">{{form.errors}}</h5>
+			<form class = 'create-listing-form-mobile' method= 'POST' enctype = 'multipart/form-data'>
+			{% csrf_token %}
+        <input type='text' name='username' class ='customer-email form-control' placeholder='Username'>
+				<input type='email' name='email' class ='customer-email form-control' placeholder='Email'>
+				<input type='password' name='password1' class ='customer-email form-control' placeholder='Password'>
+        	<input type='password' name='password2' class ='customer-email form-control' placeholder='Repeat Password'>
+				<button class='btn btn-outline-primary' type='submit'>Sign up</button>
+			</form>
+	</div>
+
+</div>
+
+</body>
+</html>
+{%endblock%}
+>>>>>>> d3f6f8cf5cabbc7fe32042e2087e491aa929524a
