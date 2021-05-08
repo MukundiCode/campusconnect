@@ -22,7 +22,7 @@
 
   <div class="topNav">
     <div class="left-col">
-      <a href = "{%url 'index'%}" style="
+      <a href = "{%url 'index'%}" class="logo" style="
       margin-left: 10px;
       padding-left: 10px;
       background: none;
@@ -58,7 +58,7 @@
       <a href="{%url 'createEvent'%}" class="right-text">New Event </a>
       <a href="{%url 'createRequest'%}" class="right-text">New MeetUp </a>
       <a href = "logoutUser" class="right-text">Logout</a>
-      <a href ="{%url 'profile'%}">
+      <a href ="{% url 'profile' %}">
           <img src="{%static 'images/profile.png'%}" style=" width: 50; height: 50; margin-right: 15px;" alt="Profile-Pic">
       </a>
       {% else %}

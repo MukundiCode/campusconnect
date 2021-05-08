@@ -4,7 +4,8 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="MapContainer" >
+        <div class="MapContainer" role="alert" >
+            <div class="login-form-header" style="padding-top: 30px; margin-bottom: 15px;"><b><h2 class='create-listing-title'>Click on the Tags to Find Exciting Events Happening Around UCT!</h2></b></div>
             <div class="Map" >
                 <div class="CampusMap">
                     <img class="Camp" src="{%static 'images/Camp.jpg'%}" alt="CampusMap" style="width:65%;height:65%;position: relative;">
@@ -12,9 +13,9 @@
                     left: 500;position: absolute;" alt="Pin" onclick="document.getElementById('id01').style.display='block'"></a><!-- 300 is the height limit, 700 is the width limit.-->
                     <a href="#" onclick="document.getElementById('id02').style.display='block'"><img class="Coordinate" src="{%static 'images/Pin.png'%}" style="top: 100;
                     left: 500;position: absolute;" alt="Pin"></a>
-                    <a href="#"><img class="Coordinate" src="{%static 'images/Pin-Blue.png'%}" style="top: 150;
+                    <a href="#" onclick="document.getElementById('id03').style.display='block'"><img class="Coordinate" src="{%static 'images/Pin-Blue.png'%}" style="top: 150;
                         left: 250;position: absolute;" alt="Pin"></a>
-                    <a href="#"><img class="Coordinate" src="{%static 'images/Pin-Red.png'%}" style="top: 100;
+                    <a href="#" onclick="document.getElementById('id04').style.display='block'"><img class="Coordinate" src="{%static 'images/Pin-Red.png'%}" style="top: 100;
                         left: 300;position: absolute;" alt="Pin"></a>
                 </div>
             </div>
@@ -22,49 +23,75 @@
 
         <div id="id01" class="modal">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <div class="advert-image animate" style="margin:auto; margin-left:35%;">
+                <img src="{% static 'images/Capture.PNG' %}"/>
+            </div>
         </div>
 
         <div id="id02" class="modal2">
             <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <div class="advert-image animate" style="margin:auto; margin-left:35%;">
+                <img src="{% static 'images/37.png' %}"/>
+            </div>
         </div>
- <div class="listings-body">
- <h2 align='center' style='color: rgb(37, 98, 155);'>MeetUp Requests</h2>
- <div class="gridListings">
 
-    {% for r in requests %}
-        <form method="GET" action ="{%url 'viewRequest' requestID=r.id%}">
-            {% csrf_token %}
-            <button class="card-listing" type="submit">
-                <div class="content-div" style="left:90px; width:100%; padding: 5px 5px 5px 5px; text-align:left;">
-                  <h4 class = ""> {{r.meetup.title}} </h4>
-                  <h6 style='color: rgb(138, 133, 133);'>From {{r.requestee.username}} </h6>
-                  <p class = '' style="font-size:14px;margin: 0;"><b></b> {{r.meetup.description}}</p>
-                  <p style='margin: 0;' >...</p>
-                </div>
-              
-            </button>
-          </form>
-    {%endfor%}
-</div>
-</div>
-<div style='margin-top:0px;' class="createListing-container-mobile" >
+        <div id="id03" class="modal3">
+            <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <div class="advert-image animate" style="margin:auto; margin-left:35%;">
+                <img src="{% static 'images/36.png' %}"/>
+            </div>
+        </div>
 
-    <!--<h2  style='color: rgb(37, 98, 155);'>Latest Blogs</h2>-->
+        <div id="id04" class="modal4">
+            <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <div class="advert-image animate" style="margin:auto; margin-left:35%;">
+                <img src="{% static 'images/35.png' %}"/>
+            </div>
+        </div>
 
-    {% for r in requests %}
-        <form method="GET" action ="{%url 'viewRequest' requestID=r.id%}" >
-            {% csrf_token %}
-            <button class="mobile-listing-card" type="submit">
-                <div class="content-div" style="left:90px; width:100%; padding: 5px 5px 5px 5px; text-align:left;">
-                  <h4 class = ""> {{r.title}} </h4>
-                  <h6 style='color: rgb(138, 133, 133);'>From {{r.requestee.username}} </h6>
-                  <p class = '' style="font-size:14px;margin: 0;"><b></b> {{r.meetup.description}}</p>
-                  <p style='margin: 0;' >...</p>
-                </div>
-              
-            </button>
-          </form>
-    {%endfor%}
-</div>
-</div>
+        <div class="listings-body">
+            <h2 align='center' style='color: rgb(37, 98, 155);'>MeetUp Requests</h2>
+        <div class="gridListings">
+
+        {% for r in requests %}
+            <form method="GET" action ="{%url 'viewRequest' requestID=r.id%}">
+                {% csrf_token %}
+                <button class="card-listing" type="submit">
+                    <div class="content-div" style="left:90px; width:100%; padding: 5px 5px 5px 5px; text-align:left;">
+                        <h4 class = ""> {{r.meetup.title}} </h4>
+                        <h6 style='color: rgb(138, 133, 133);'>From {{r.requestee.username}} </h6>
+                        <p class = '' style="font-size:14px;margin: 0;"><b></b> {{r.meetup.description}}</p>
+                        <p style='margin: 0;' >...</p>
+                    </div>
+                
+                </button>
+            </form>
+        {%endfor%}
+
+    <div style='margin-top:0px;' class="createListing-container-mobile" >
+
+        <!--<h2  style='color: rgb(37, 98, 155);'>Latest Blogs</h2>-->
+
+        {% for r in requests %}
+            <form method="GET" action ="{%url 'viewRequest' requestID=r.id%}" >
+                {% csrf_token %}
+                <button class="mobile-listing-card" type="submit">
+                    <div class="content-div" style="left:90px; width:100%; padding: 5px 5px 5px 5px; text-align:left;">
+                    <h4 class = ""> {{r.title}} </h4>
+                    <h6 style='color: rgb(138, 133, 133);'>From {{r.requestee.username}} </h6>
+                    <p class = '' style="font-size:14px;margin: 0;"><b></b> {{r.meetup.description}}</p>
+                    <p style='margin: 0;' >...</p>
+                    </div>
+                
+                </button>
+            </form>
+        {%endfor%}
+    </div>
+
+    <script>
+        function myFunction() {
+        alert("This is an Alert!");
+        }
+        </script>
+
 {% endblock %}
