@@ -12,5 +12,13 @@ class profileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['profileImage','studentNumber','user','description','interests']
-        #widgets = {'user': forms.HiddenInput()}
         
+class eventForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['date','poster','limit']
+
+class meetupForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['location','time','description']

@@ -16,6 +16,7 @@ class Profile(models.Model):
 class MeetUp(models.Model):
     location = models.TextField(null=True)
     time = models.TimeField(null=True)
+    description = models.TextField(null= True)
 
 class Meet_User(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,null = True,on_delete = models.CASCADE)
@@ -26,4 +27,6 @@ class Event(models.Model):
     poster = models.ImageField(null = True, blank = True,help_text='Add a poster for this evet',)
     limit = models.IntegerField(null=True)
     
-
+class Requests(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,null = True,on_delete = models.CASCADE)
+    meetup = models.ForeignKey(MeetUp,null = True,on_delete = models.CASCADE)
