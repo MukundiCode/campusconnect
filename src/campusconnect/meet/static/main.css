@@ -62,10 +62,10 @@ html,body
 
 .create-profile-content {
   margin: auto;
-  margin-top: 60px;
+  margin-top: 80px;
   width: 100%;
 
-  border: 1px solid blue;
+  /*border: 1px solid blue;*/
 }
 
 .create-profile-content-inner {
@@ -204,11 +204,11 @@ html,body
     justify-content: flex-start;
 }
 
-.logo {
+/*.logo {
     width: 85px;
     height: 40px;
     /*background: red;*/
-    margin-left: 20px;
+   /* margin-left: 20px;
     background: none;
     font-family: Roboto;
     font-style: normal;
@@ -219,7 +219,7 @@ html,body
 
     border: none;
     text-decoration: none;
-}
+}*/
 
 .logo:hover {
   color:black;
@@ -227,7 +227,7 @@ html,body
 }
 
 .logo:hover{
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .right-text {
