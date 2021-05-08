@@ -67,6 +67,20 @@ html,body
   width: 50%;
 }
 
+.MapContainer{
+  margin-top: 60px;
+  margin-left: 2%;
+  border: 1px solid red;
+
+}
+.Map{
+  background: #2f3f47;
+  margin-right: 25px;
+}
+.CampusMap{
+
+}
+
 .topNav-mobile {
     position: fixed;
     display: flex;
@@ -230,7 +244,7 @@ cursor: pointer;
 }
 
 .right-text:hover{
-transform: scale(1.2);
+transform: scale(1.05);
 }
 
 .NavBar2Items{
