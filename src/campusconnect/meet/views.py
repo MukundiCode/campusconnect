@@ -60,7 +60,8 @@ def createRequest(request):
         if form.is_valid():
             print('valid')
             form.save()
-            #return redirect('index')
+            msg = "Your meetup request has been sent. We will match you up with students with similar interests as you and notify you once they accept the invitation. "
+            return redirect('message',msg)
         else:
             print('not valid')
             context = {'form':form}
@@ -71,16 +72,16 @@ def createRequest(request):
         weightList = matcher(user.id)
         meetup = MeetUp.objects.latest('id')
         #sending emails
-        for i in range(3):
+        for i in range(meetup.numberOfPeople):
             #creating the request for each user 
             request_obj = Requests(user=weightList[i]["profile"].user, meetup=meetup,requestee=request.user)
             request_obj.save()
             email_from = "tmchitamba@gmail.com"
             email_to = weightList[i]["profile"].user.email
-            message = "Hey, someone wants to meet you"
+            message = "Hey, "+ weightList[i]["profile"].user.username +", we have matched you up with "+user.user.username +" , who is having a meetup at "+meetup.location +". Log on to CampusConnect to accept of deny this request."
             if message != '':
                 send_mail(
-                'Meeting request '+ email_from +' via campusConnect',
+                'Meetup request '+ weightList[i]["profile"].user.username +' via campusConnect',
                 message,
                 email_from,
                 [email_to],
@@ -93,6 +94,12 @@ def createRequest(request):
     form = meetupForm
     context = {'form':form}
     return render(request,'createRequest.html',context)
+
+def message(request,msg):
+    if request.method == "POST":
+        return redirect('index')
+    context = {'message':msg}
+    return render(request,"message.html",context)
 
 @login_required(login_url='login')
 def viewRequest(request,requestID):
