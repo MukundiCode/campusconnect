@@ -15,7 +15,7 @@ class Profile(models.Model):
 
 class MeetUp(models.Model):
     location = models.CharField(null=True, max_length=100)
-    time = models.TimeField(null=True)
+    time = models.CharField(null=True,max_length=10)
     description = models.TextField(null= True)
 
 class Meet_User(models.Model):

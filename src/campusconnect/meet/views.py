@@ -50,9 +50,11 @@ def createRequest(request):
         if form.is_valid():
             print('valid')
             form.save()
-            return redirect('index')
+            #return redirect('index')
         else:
             print('not valid')
+            context = {'form':form}
+            return render(request,'createRequest.html',context)
 
         thisUserID = request.user
         user = Profile.objects.get(user = thisUserID)
