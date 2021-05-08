@@ -17,41 +17,28 @@ html,body
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
+    background: #ffffff;
 }
 
 .topNav {
+  margin-top: 10px;
   position: fixed;
   display: flex;
   width: 100vw;
   height: 60px;
   top: 0px;
   left: 0px;
-  background: #2cc987;
+  border-radius: 20px;
+  background: #41af97;
   color: #fff;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /*box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/
   z-index: 5;
   /*border: 1px solid red;*/
   will-change: transform;
 }
-
-
-.profile-description {
-  width: 90%;
-  height: 100px;
-  margin: auto;
-  margin-bottom: 30px;
-  border-radius: 5px;
-  background: #FAF9F6;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-  border: 1px solid yellow;
-  border: 1px, rgb(177, 177, 177);
-  border-color :rgb(209, 209, 209);
-
-}
-
 .create-profile-content {
   margin: auto;
   margin-top: 60px;
@@ -67,18 +54,24 @@ html,body
   width: 50%;
 }
 
-.MapContainer{
+
+.profile-content {
   margin-top: 60px;
-  margin-left: 2%;
-  border: 1px solid red;
-
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
-.Map{
-  background: #2f3f47;
-  margin-right: 25px;
-}
-.CampusMap{
 
+.profile-pic {
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.profile-description {
+  width: 100px;
+  height: 100px;
+  border: 1px solid yellow;
 }
 
 .topNav-mobile {
@@ -115,7 +108,7 @@ html,body
   justify-content: center;
   align-items: center;
   background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(107, 105, 105, 0.25);
+  /*box-shadow: 0px 4px 4px rgba(107, 105, 105, 0.25);*/
   z-index: 4;
   border-radius: 10px;
 }
@@ -188,62 +181,33 @@ html,body
 }
 
 .left-col {
-    flex: 0.5;
+    flex: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
 }
 
-.logo {
-    width: 85px;
-    height: 40px;
-    /*background: red;*/
-    margin-left: 20px;
-    background: none;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 26px;
-    line-height: 42px;
-    color: rgb(37, 98, 155);
-
-    border: none;
-    text-decoration: none;
-}
-
-.logo:hover {
-  color:black;
-  cursor: pointer;
-}
-
-.logo:hover{
-  transform: scale(1.2);
-}
 
 .right-text {
-  width: 100px;
+  height: 40px;
   /*background: red;*/
-  margin-left: 20px;
+  margin-left: 10px;
   background: none;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
-  /*line-height: 42px;*/
-  color: rgb(48, 56, 124);
+  color: rgb(41, 30, 107);
 
-  border: none;
+  border: outset;
   text-decoration: none;
 }
 
 .right-text:hover {
-color:rgb(15, 28, 104);
+color:rgb(155, 67, 8);
 cursor: pointer;
-}
-
-.right-text:hover{
-transform: scale(1.05);
+transform: scale(1.01);
 }
 
 .NavBar2Items{
@@ -2016,7 +1980,7 @@ transform: scale(1.05);
   padding-bottom: 30px;
   justify-content: center;
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #C4C4C4;
-  /*border: 1px solid red;*/
+  border: 1px solid red;
 }
 
 .selectedItemCard {
@@ -2082,7 +2046,7 @@ transform: scale(1.05);
 .listingDetails {
   width: 100%;
   /*height: 100%;*/
-  /*border: 1px solid red;*/
+  border: 1px solid red;
 }
 
 .listingName {
@@ -2191,7 +2155,7 @@ transform: scale(1.05);
 .addToCart-btn {
   /*position: relative;*/
   margin: auto;
-  margin-left: 10px;
+  /*margin-left: 7.5%;*/
   transition-duration: 0.4s;
   background-color: white;
   /*color: black;
@@ -2682,8 +2646,9 @@ transform: scale(1.05);
 }
 
 .MapContainer{
-  margin-top: 5%;
+  margin-top: 60px;
   margin-left: 2%;
+  border: 1px solid red;
 
 }
 .Map{
@@ -2691,11 +2656,5 @@ transform: scale(1.05);
   margin-right: 25px;
 }
 .CampusMap{
-  position: relative;
-  top: 0;
-  left: 0;
-}
-.Coordinate{
-  width: 20px;
-  height: 30px;
+
 }
