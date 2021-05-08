@@ -36,6 +36,10 @@ def createProfile(request):
     context = {'form':form}
     return render(request,'createProfile.html',context)
 
+<<<<<<< HEAD
+def profile(request):
+    return render(request,'profile.html')
+=======
 def createRequest(request):
     #this user
     if request.METHOD == "POST":
@@ -100,3 +104,4 @@ def myFunc(e):
                     
     
 
+>>>>>>> d3f6f8cf5cabbc7fe32042e2087e491aa929524a
