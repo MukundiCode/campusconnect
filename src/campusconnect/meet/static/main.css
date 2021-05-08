@@ -37,6 +37,14 @@ html,body
   will-change: transform;
 }
 
+.index-container {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
 
 .profile-description {
   width: 90%;
@@ -69,13 +77,14 @@ html,body
 
 .MapContainer{
   margin-top: 60px;
-  margin-left: 2%;
+  width: 95%;
+  margin: auto;
   border: 1px solid red;
 
 }
 .Map{
   background: #2f3f47;
-  margin-right: 25px;
+  /*margin-right: 25px;*/
 }
 .CampusMap{
 
@@ -2372,11 +2381,11 @@ transform: scale(1.05);
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 6; /* Sit on top */
-  left: 0;
-  top: 0;
+  /*z-index: 6; /* Sit on top */
+  /*left: 0;
+  top: 0;*/
   width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  height: 100%; /*Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
