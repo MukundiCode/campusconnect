@@ -12,7 +12,8 @@
 <p >{{req.meetup.description}}</p>
 
 <h6 style='color: rgb(138, 133, 133);'>From {{req.requestee.username}} </h>
-<a href= {% url 'acceptRequest' requestID=req.id %}> Accept </a>
+<a href= {% url 'acceptRequest' requestID=req.id %}> Accept Request </a>
+<a href= {% url 'denyRequest' requestID=req.id %}> Reject Request  </a>
 </div>
 <br></br>
  <h2 align='center' style='color: rgb(37, 98, 155);'>MeetUp Requests</h2>
