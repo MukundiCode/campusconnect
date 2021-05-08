@@ -12,21 +12,21 @@
          </div>
          <div class="" style="display:flex; margin-left:120px; align-items:center;">
            <h4 class = "listingName">{{profile.user.username}}</h4>
+           <p>Year of Study: {{profile.yearOfStudy}} </p>
          </div>
          <hr style="width:90%; margin:auto; margin-bottom:20px; border:1px solid grey;">
          <div style="display:flex; flex-direction:row; justify-content:flex-end; flex:0.5; margin-right:80px; margin-bottom:40px;">
-           <form  method='GET'>
-                 <button class='addToCart-btn btn btn-outline-primary'>Create New Listing</button>
-              </form>
            <form  method='get' >
                <button class='addToCart-btn btn btn-outline-primary'>Logout</button></a>
            </form>
          </div>
          <div class="profile-description">
-
+            <p><b>Bio</b><br> {{ profile.description }}</p>
          </div>
          <div class="profile-description">
-
+            <p><b>Interests</b><br> {{profile.interests}}</p>
+            <p></p>
+            <p><b>Values</b><br>{{profile.values}}</p>
          </div>
        </div>
      </div>
