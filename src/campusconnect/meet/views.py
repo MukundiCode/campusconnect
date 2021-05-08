@@ -98,6 +98,13 @@ def viewRequest(request,requestID):
     req = Requests.objects.get(id = requestID)
     context = {'req':req,'requests':requests}
     return render(request,"viewRequest.html",context)
+
+def acceptRequest(request,requestID):
+    req = Requests.objects.get(id = requestID)
+    meet_user_obj = Meet_User(user=request.user,meetup=req.meetup)
+    meet_user_obj.save()
+    return redirect('index')
+
     
 
 #the matcher method takes in a user and searches through all the other users
