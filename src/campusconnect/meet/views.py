@@ -29,3 +29,6 @@ def createProfile(request):
 
 def profile(request):
     return render(request,'profile.html')
+
+def createRequest(request):
+    return render(request,'createRequest.html')

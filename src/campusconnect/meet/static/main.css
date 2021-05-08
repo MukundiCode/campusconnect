@@ -17,47 +17,54 @@ html,body
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
-    background: #4b4b4a;
 }
 
 .topNav {
-  margin-top: 10px;
   position: fixed;
   display: flex;
   width: 100vw;
   height: 60px;
   top: 0px;
   left: 0px;
-  border-radius: 20px;
-  background: #41af97;
+  background: #3ed139;
   color: #fff;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  /*box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 5;
   /*border: 1px solid red;*/
   will-change: transform;
 }
 
 
-.profile-content {
+.profile-description {
+  width: 90%;
+  height: 100px;
+  margin: auto;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  background: #FAF9F6;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  border: 1px solid yellow;
+  border: 1px, rgb(177, 177, 177);
+  border-color :rgb(209, 209, 209);
+
+}
+
+.create-profile-content {
+  margin: auto;
   margin-top: 60px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
+
+  border: 1px solid blue;
 }
 
-.profile-pic {
-  width: 100%;
-  height: 100px;
-  border: 1px solid black;
-}
-
-.profile-description {
-  width: 100px;
-  height: 100px;
-  border: 1px solid yellow;
+.create-profile-content-inner {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 50%;
 }
 
 .topNav-mobile {
@@ -94,7 +101,7 @@ html,body
   justify-content: center;
   align-items: center;
   background: #ffffff;
-  /*box-shadow: 0px 4px 4px rgba(107, 105, 105, 0.25);*/
+  box-shadow: 0px 4px 4px rgba(107, 105, 105, 0.25);
   z-index: 4;
   border-radius: 10px;
 }
@@ -167,15 +174,41 @@ html,body
 }
 
 .left-col {
-    flex: 1;
+    flex: 0.5;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
 }
 
+.logo {
+    width: 85px;
+    height: 40px;
+    /*background: red;*/
+    margin-left: 20px;
+    background: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 42px;
+    color: rgb(37, 98, 155);
+
+    border: none;
+    text-decoration: none;
+}
+
+.logo:hover {
+  color:black;
+  cursor: pointer;
+}
+
+.logo:hover{
+  transform: scale(1.2);
+}
 
 .right-text {
+  width: 150px;
   height: 40px;
   /*background: red;*/
   margin-left: 10px;
@@ -184,16 +217,20 @@ html,body
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
-  color: rgb(41, 30, 107);
+  line-height: 42px;
+  color: #fff;
 
-  border: outset;
+  border: none;
   text-decoration: none;
 }
 
 .right-text:hover {
-color:rgb(155, 67, 8);
+color:black;
 cursor: pointer;
-transform: scale(1.01);
+}
+
+.right-text:hover{
+transform: scale(1.2);
 }
 
 .NavBar2Items{
@@ -1966,7 +2003,7 @@ transform: scale(1.01);
   padding-bottom: 30px;
   justify-content: center;
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #C4C4C4;
-  border: 1px solid red;
+  /*border: 1px solid red;*/
 }
 
 .selectedItemCard {
@@ -2032,7 +2069,7 @@ transform: scale(1.01);
 .listingDetails {
   width: 100%;
   /*height: 100%;*/
-  border: 1px solid red;
+  /*border: 1px solid red;*/
 }
 
 .listingName {
@@ -2141,7 +2178,7 @@ transform: scale(1.01);
 .addToCart-btn {
   /*position: relative;*/
   margin: auto;
-  /*margin-left: 7.5%;*/
+  margin-left: 10px;
   transition-duration: 0.4s;
   background-color: white;
   /*color: black;
