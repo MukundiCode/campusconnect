@@ -9,7 +9,7 @@
 		<div class="createListingCard">
 			<div class="login-form-header"><b><h2 class='create-listing-title'>Sign In to your account</h2></b></div>
 
-			<h5 style="color:red;">{{form.errors}}</h5>
+			<h5 style="color:red;">{{error}}</h5>
 			<form class = 'create-listing-form-mobile' method= 'POST' enctype = 'multipart/form-data'>
 				{% csrf_token %}
 				<input type='email' name='Email' class ='customer-email form-control' placeholder='Email'>
